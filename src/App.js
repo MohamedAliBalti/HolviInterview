@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect } from "react";
+import DataTable from "./components/DataTable";
+import Header from "./components/Header";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProducts,getMerchantName } from "./services/actions";
 
 function App() {
+  const {products,merchantName} = useSelector((state) => state.reducer);
+
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+    dispatch(getMerchantName());
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header merchantName={merchantName}/>
+
+      <div className="DataTable">
+        <DataTable products={products} />
+      </div>
     </div>
   );
 }

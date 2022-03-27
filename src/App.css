@@ -1,38 +1,115 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #ebf5ff 0%, #7ec1d7 100%);
+  font-family: 'Roboto';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .add-input
+ {
+  margin-top: 8vh;
+  margin-bottom: 6vh;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    width: 25vw;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+  .delete-btn{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    background: blue;
   }
-  to {
-    transform: rotate(360deg);
+   .delete-btn:hover {
+    background: #ff6f47 !important;
+    /* color: white; */
   }
+
+
+  .product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-list {
+    min-width: 30%;
+    list-style: none;
+  }
+
+  .quantity{
+    width: 3vw !important;
+    border: none;
+  }
+  
+  .product {
+    border-radius: 0.5vh;
+    margin: 0.2vh;
+    width: 32vw;
+    background: white;
+    font-size: 1.1vw;
+
+    color: black;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 5vh;
+    transition: all 1s ease;
+  }
+
+  .product li {
+    flex: 1;
+  }
+  
+  .trash-btn,
+  .complete-btn {
+    background: #ff6f47;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0rem;
+    height: 5vh;
+    width: 5vh;
+  }
+  .complete-btn {
+    background: rgb(11, 212, 162);
+  }
+
+.head{
+  background :#e5f1ea !important
+}
+  
+  .fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  /*CUSTOM SELECTOR */
+ 
+  .card-cell{
+    border: #ff6f47 ;
+  }
+
+
+.name-cell{
+
+  text-align: left;
+  padding-left: 3vw;
+}
+
+.list-header{
+
+  font-weight: bold;
 }
